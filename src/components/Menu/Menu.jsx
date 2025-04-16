@@ -36,7 +36,10 @@ export const Menu = () => {
   }, [user])
 
   return (
-    <div className='flex items-center justify-between w-screen h-12 bg-black border-0 border-b-2 border-white'>
+    <div className='flex items-center justify-between w-screen h-12
+    bg-white-800
+    dark:bg-black-800
+    border-0 border-b-2 border-white'>
       <div className='flex h-full gap-2 p-2 pb-0'>
         {menuArr.map((menu, index) =>
           <MenuItem

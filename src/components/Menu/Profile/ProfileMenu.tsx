@@ -1,3 +1,4 @@
+import Help from "./Help";
 
 
 
@@ -15,8 +16,8 @@ const ProfileMenu = ({
 
 
     return (
-        <div className="bg-red-500 border border-gray-200 rounded-md shadow-lg z-10">
-            HERE I AM!
+        <div className="border-gray-300 border-2 rounded-md p-2 h-max">
+            <Help />
         </div>
     );
 
