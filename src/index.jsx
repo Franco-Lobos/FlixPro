@@ -1,10 +1,11 @@
-import {Auth0Provider} from '@auth0/auth0-react'
-import {createBrowserHistory} from 'history'
+import { Auth0Provider } from '@auth0/auth0-react'
+import { createBrowserHistory } from 'history'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import {customDebug} from './utils/custom.debug'
+import { customDebug } from './utils/custom.debug'
+import './i18n.js'; // Make sure the i18n initialization is executed
 
 
 const browserHistory = createBrowserHistory()
@@ -27,7 +28,8 @@ const providerConfig = {
   onRedirectCallback,
   authorizationParams: {
     redirect_uri: window.location.origin,
-    ...(audience ? {audience} : null),
+    scope: "openid profile email",
+    ...(audience ? { audience } : null),
   },
 }
 

@@ -1,11 +1,10 @@
-import {useAuth0} from '@auth0/auth0-react'
-import React from 'react'
-import {useZustand} from '../store/useZustand'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useZustand } from '../store/useZustand'
 
 
 export const Home = () => {
-  const {menuArr} = useZustand()
-  const {isAuthenticated} = useAuth0()
+  const { menuArr } = useZustand()
+  const { isAuthenticated } = useAuth0()
 
   return (
     !isAuthenticated ||
