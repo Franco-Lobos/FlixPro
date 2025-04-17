@@ -10,6 +10,9 @@ export default defineConfig({
       // Maps "src" to the /src folder in your project root.
       'src': '/src'
     }
+  },
+  build: {
+    chunkSizeWarningLimit: 5000,
   }
 })
 

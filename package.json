@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.2",
     "@react-spring/three": "^9.7.1",
     "@react-three/a11y": "^3.0.0",
     "@react-three/drei": "^9.61.1",

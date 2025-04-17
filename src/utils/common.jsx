@@ -1,7 +1,7 @@
 import * as THREE from 'three'
-import {mergeBufferGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils'
-import {assertDefined} from './custom.assert'
-import {customDebug} from './custom.debug'
+import { mergeBufferGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils'
+import { assertDefined } from './custom.assert'
+import { customDebug } from './custom.debug'
 
 
 export const getBox3RandomPoint = (box3) => {
@@ -115,9 +115,9 @@ export const getCharacterUrls = (modelType, characterCnt) => {
 
   switch (modelType) {
     case 'glb':
-      return Array.from({length: characterCnt}).map((v, i) => `./models/glb/characters/character (${i + 1}).glb`)
+      return Array.from({ length: characterCnt }).map((v, i) => `./models/glb/characters/character (${i + 1}).glb`)
     case 'fbx':
-      return Array.from({length: characterCnt}).map((v, i) => `./models/fbx/characters/character (${i + 1}).fbx`)
+      return Array.from({ length: characterCnt }).map((v, i) => `./models/fbx/characters/character (${i + 1}).fbx`)
     default:
       return []
   }

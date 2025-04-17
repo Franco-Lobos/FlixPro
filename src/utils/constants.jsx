@@ -1,5 +1,5 @@
-import {getCharacterUrls} from './common'
-
+import { getCharacterUrls } from './common'
+import { SubscriptionStatus } from '../utils/types'
 
 /* Environment */
 
@@ -90,3 +90,15 @@ export const TOLERANCE_DISTANCE = HTML_ASPECT * 10
 export const CAMERA_INIT_POS = [-25 * HTML_ASPECT, 25 * HTML_ASPECT, -25 * HTML_ASPECT]
 
 export const CAMERA_DES_POS = CAMERA_INIT_POS
+
+
+
+// UI
+export const MENU_SECTION_CLASSES = `border-y-[1px] border-gray-300 py-4 text-sm text-gray-500`;
+
+
+//DEFAULTS
+export const DEFAULT_USER_SUBSCRIPTION = SubscriptionStatus.FREE_TIER;
+export const HARCODED_VERSION = '3.4.66';
+
+
