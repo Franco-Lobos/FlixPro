@@ -4,9 +4,10 @@
     "FREE_TIER": "Free Tier",
     "PRO_TIER": "Pro Tier",
     "ENTERPRISE_TIER": "Enterprise Tier",
-    "SETTINGS": "Settings",
+    "SETTINGS": "My Settings",
     "DOWNLOAD_APP": "Get desktop app",
     "DARK_MODE": "Dark mode",
     "LOG_OUT": "Log out",
-    "VERSION": "Version"
+    "VERSION": "Version",
+    "BETA": "Beta"
 }

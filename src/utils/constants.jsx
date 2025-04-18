@@ -95,6 +95,12 @@ export const CAMERA_DES_POS = CAMERA_INIT_POS
 
 // UI
 export const MENU_SECTION_CLASSES = `border-y-[1px] border-gray-300 py-4 text-sm text-gray-500`;
+export const MENU_ICON_CLASSES = `w-5 h-5 `;
+
+
+export const COLORS = {
+  themeBlack: '#323232',
+}
 
 
 //DEFAULTS
