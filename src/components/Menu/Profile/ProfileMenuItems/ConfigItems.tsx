@@ -1,12 +1,16 @@
 import { useTranslation } from "react-i18next";
 import LanguageLabels from "src/languages/en/translationEn.json";
-import { Switch } from "@mui/material";
+import { Switch, Tooltip } from "@mui/material";
 import AsMenuItem from "../../../Generic/AsMenuItem";
 import SettingsIcon from "../../../Icons/MySettings";
 import DownlaodIcon from "../../../Icons/DownlaodIcon";
 import MoonIcon from "../../../Icons/Moon";
 import { useRecoilState } from "recoil";
 import { isDarkModeAtom } from "../../../../recoil/theme";
+import InfoIcon from "../../../Icons/InfoIcon";
+import { MENU_ICON_CLASSES } from "../../../../utils/constants";
+import colors from 'tailwindcss/colors'
+
 
 const ConfigItems = () => {
 
@@ -30,6 +34,18 @@ const ConfigItems = () => {
                 title={t(LanguageLabels.DOWNLOAD_APP)}
                 IconComponent={DownlaodIcon}
                 darkMode={isDarkMode}
+                AuxiliarComponent={
+                    <Tooltip
+                        title={t(LanguageLabels.DOWNLOAD_APP_TOOLTIP)}
+                    >
+                        <div>
+                            <InfoIcon
+                                className={`${MENU_ICON_CLASSES}`}
+                                fill={isDarkMode ? colors.white : colors.gray[900]}
+                            />
+                        </div>
+                    </Tooltip>
+                }
             />
             <AsMenuItem
                 title={
