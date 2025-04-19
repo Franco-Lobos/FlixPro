@@ -4,11 +4,6 @@ import ProfileMenuDropDown from "./ProfileMenuDropDown";
 import { useAuth0 } from "@auth0/auth0-react";
 import { USER_NAME } from "../../../utils/constants";
 
-
-
-
-
-
 type ProfileMenuProps = {
 
 }
@@ -36,7 +31,9 @@ const ProfileMenu = ({
     };
 
     return (
-        <div className="border-gray-300 border-2 rounded-md p-2 h-max">
+        <div className={`
+        border-gray-300 border-2 rounded-md p-2 h-max
+            `}>
 
             <div className="flex flex-row gap-2 items-center">
                 <Help

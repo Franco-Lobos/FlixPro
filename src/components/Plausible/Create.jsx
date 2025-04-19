@@ -1,14 +1,14 @@
-import {useAuth0} from '@auth0/auth0-react'
-import React, {useRef} from 'react'
-import {useZustand} from '../../store/useZustand'
-import {urlToDomain} from '../../utils/common'
-import {USE_PLAUSIBLE} from '../../utils/constants'
-import {customDebug} from '../../utils/custom.debug'
-import {saveData} from '../../utils/mongo.db'
-import {createSite} from '../../utils/plausible'
+import { useAuth0 } from '@auth0/auth0-react'
+import React, { useRef } from 'react'
+import { useZustand } from '../../store/useZustand'
+import { urlToDomain } from '../../utils/common'
+import { USE_PLAUSIBLE } from '../../utils/constants'
+import { customDebug } from '../../utils/custom.debug'
+import { saveData } from '../../utils/mongo.db'
+import { createSite } from '../../utils/plausible'
 
 
-export const Create = ({domain}) => {
+export const Create = ({ domain }) => {
   const {
     nextPlausibleStep,
     setAlertMsg,
@@ -18,13 +18,13 @@ export const Create = ({domain}) => {
     onConfirm,
     setIsLoading,
   } = useZustand()
-  const {user} = useAuth0()
+  const { user } = useAuth0()
   const inputRef = useRef(null)
 
   return (
     <>
       <input
-        className='w-3/5 p-1 text-black rounded'
+        className='w-3/5 p-1 text-gray-900 rounded'
         ref={inputRef}
         type='text'
         value={domain}
@@ -63,7 +63,7 @@ export const Create = ({domain}) => {
               return
             }
           } else {
-            siteData = {domain: urlDomain}
+            siteData = { domain: urlDomain }
           }
 
           siteData.username = user.name

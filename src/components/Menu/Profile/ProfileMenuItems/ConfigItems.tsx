@@ -1,31 +1,97 @@
 import { useTranslation } from "react-i18next";
 import LanguageLabels from "src/languages/en/translationEn.json";
-import { SectionProps } from "../../../../utils/types";
-import { MenuItem } from "@mui/material";
+import { Switch, Tooltip } from "@mui/material";
+import AsMenuItem from "../../../Generic/AsMenuItem";
+import SettingsIcon from "../../../Icons/MySettings";
+import DownlaodIcon from "../../../Icons/DownlaodIcon";
+import MoonIcon from "../../../Icons/Moon";
+import { useRecoilState } from "recoil";
+import { isDarkModeAtom } from "../../../../recoil/theme";
+import InfoIcon from "../../../Icons/InfoIcon";
+import { MENU_ICON_CLASSES } from "../../../../utils/constants";
+import colors from 'tailwindcss/colors'
 
 
 const ConfigItems = () => {
 
+    const { t } = useTranslation();
+    const [isDarkMode, setIsDarkMode] = useRecoilState<boolean>(isDarkModeAtom);
+
+    const handleDarkModeChange = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setIsDarkMode((prev: boolean) => !prev);
+    };
 
     return (
         <div>
-            <MenuItem
+            <AsMenuItem
+                title={t(LanguageLabels.SETTINGS)}
+                IconComponent={SettingsIcon}
+                darkMode={isDarkMode}
+            />
+            <AsMenuItem
+                title={t(LanguageLabels.DOWNLOAD_APP)}
+                IconComponent={DownlaodIcon}
+                darkMode={isDarkMode}
+                AuxiliarComponent={
+                    <Tooltip
+                        title={t(LanguageLabels.DOWNLOAD_APP_TOOLTIP)}
+                    >
+                        <div>
+                            <InfoIcon
+                                className={`${MENU_ICON_CLASSES}`}
+                                fill={isDarkMode ? colors.white : colors.gray[900]}
+                            />
+                        </div>
+                    </Tooltip>
+                }
+            />
+            <AsMenuItem
+                title={
+                    <div>
+                        <span>{t(LanguageLabels.DARK_MODE)}</span>
+                        <span className="
+                            rounded-md
+                            bg-gradient-to-r
+                            from-blue-200
+                            to-teal-100
+                            px-1
+                            py-0.5
+                            uppercase
+                            mx-2
+                        ">
 
-            >
-                {"Config 1"}
+                            <span className="
+                                bg-gradient-to-r
+                                from-teal-600
+                                to-teal-500
+                                bg-clip-text
+                                text-transparent
+                                text-sm
+                                font-extrabold
+                            ">
+                                {t(LanguageLabels.BETA)}
+                            </span>
+                        </span>
 
-            </MenuItem>
-            <MenuItem
+                    </div>
+                }
+                IconComponent={MoonIcon}
+                onClick={handleDarkModeChange}
+                AuxiliarComponent={
+                    <Switch
+                        checked={isDarkMode}
+                        onChange={e => {
+                            e.stopPropagation();
+                            setIsDarkMode(e.target.checked);
+                        }
+                        }
+                    />
 
-            >
-                {"Config 2"}
-
-            </MenuItem>
-            <MenuItem
-
-            >
-                {"Config 3"}
-            </MenuItem>
+                }
+                darkMode={isDarkMode}
+            />
         </div>
     )
 };

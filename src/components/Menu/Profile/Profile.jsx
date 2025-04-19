@@ -14,12 +14,12 @@ export const Profile = () => {
   }
 
   return (
-    <div className='flex items-center justify-center h-full gap-2 p-2 text-white'>
+    <div className='flex items-center justify-center h-full gap-2 p-2 text-gray-900 dark:text-white'>
 
       {isAuthenticated ?
         <ProfileMenu /> :
         <button
-          className='pl-2 pr-2 border-2 rounded'
+          className='pl-2 pr-2 border-2 rounded border-gray-900 dark:border-white'
           onClick={loginWithRedirect}
         >
           Log in

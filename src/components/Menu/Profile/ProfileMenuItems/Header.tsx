@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <div className="pb-4">
-            <strong className="text-black">
+            <strong >
                 {t(LanguageLabels.BRAND_NAME)}
             </strong>
 

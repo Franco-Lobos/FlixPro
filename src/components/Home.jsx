@@ -10,7 +10,7 @@ export const Home = () => {
     !isAuthenticated ||
     !menuArr.length
   ) && (
-      <div className='absolute z-10 flex flex-col items-center justify-center w-full h-full text-center text-white bg-black text-8xl'>
+      <div className='absolute z-10 flex flex-col items-center justify-center w-full h-full text-center  text-gray-900 bg-white dark:bg-gray-900 dark:text-white text-8xl'>
         {
           !isAuthenticated ?
             <div>Please log in to analyze websites</div> :

@@ -6,6 +6,9 @@ import App from './App'
 import './index.css'
 import { customDebug } from './utils/custom.debug'
 import './i18n.js'; // Make sure the i18n initialization is executed
+import {
+  RecoilRoot,
+} from 'recoil';
 
 
 const browserHistory = createBrowserHistory()
@@ -35,8 +38,10 @@ const providerConfig = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Auth0Provider {...providerConfig}>
-      <App />,
-    </Auth0Provider>
-  </React.StrictMode>,
+    <RecoilRoot >
+      <Auth0Provider {...providerConfig}>
+        <App />
+      </Auth0Provider>
+    </RecoilRoot>
+  </React.StrictMode >,
 )

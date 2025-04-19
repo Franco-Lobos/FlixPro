@@ -7,7 +7,6 @@ import ConfigItems from './ProfileMenuItems/ConfigItems';
 import LogOut from './ProfileMenuItems/LogOut';
 import { useTranslation } from "react-i18next";
 import LanguageLabels from "src/languages/en/translationEn.json";
-import { MenuItem } from '@mui/material';
 
 type ProfileMenuDropDownProps = {
     anchorEl: null | HTMLElement;
@@ -32,10 +31,19 @@ const ProfileMenuDropDown = ({
             sx={{
                 marginTop: "1rem",
             }}
-
+            PaperProps={{
+                className: `
+                  bg-white text-black 
+                  dark:bg-gray-900 dark:text-white
+                  shadow-lg rounded-md
+                  border border-gray-200 dark:border-gray-700
+                `
+            }}
         >
             <div
-                className='w-72 h-max flex flex-col p-4'
+                className={`
+                w-80 h-max flex flex-col p-4           
+                 }`}
             >
                 <Header />
 
@@ -49,12 +57,12 @@ const ProfileMenuDropDown = ({
                     specialClassName={MENU_SECTION_CLASSES}
                 />
 
-                <p className='text-xs text-gray-500 pt-2'>
+                <p className='text-xs pt-2'>
                     {`${t(LanguageLabels.VERSION)}: ${HARCODED_VERSION}`}
                 </p>
-            </div>
+            </div >
 
-        </Menu>
+        </Menu >
     );
 };
 

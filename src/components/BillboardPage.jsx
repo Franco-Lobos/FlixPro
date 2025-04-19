@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import {useControls} from 'leva'
+import { useControls } from 'leva'
 import React from 'react'
-import {useZustand} from '../store/useZustand'
+import { useZustand } from '../store/useZustand'
 
 const proxyDomain = import.meta.env.VITE_PROXY_DOMAIN
 
@@ -11,8 +11,8 @@ export const BillboardPage = () => {
     menuArr,
   } = useZustand()
 
-  const {fullScreen} = useControls({
-    fullScreen: {value: false, label: 'Full Screen'},
+  const { fullScreen } = useControls({
+    fullScreen: { value: false, label: 'Full Screen' },
   })
 
   const billboardDomain = menuArr[selMenuIndex]?.domain
@@ -20,7 +20,7 @@ export const BillboardPage = () => {
   return (
     <div
       className={classNames({
-        'absolute z-10 w-full h-full bg-black rounded': true,
+        'absolute z-10 w-full h-full  text-gray-900 bg-white dark:bg-gray-900 dark:text-white rounded': true,
         'hidden': !fullScreen,
       })}
     >

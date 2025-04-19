@@ -1,9 +1,9 @@
 import classNames from 'classnames'
-import {useControls} from 'leva'
-import React, {useCallback, useEffect} from 'react'
-import {useZustand} from '../../store/useZustand'
-import {MAX_CHARACTER_CNT, REALTIME_DURATION, USE_PLAUSIBLE} from '../../utils/constants'
-import {getAggregate, getRealtimeVisitors} from '../../utils/plausible'
+import { useControls } from 'leva'
+import React, { useCallback, useEffect } from 'react'
+import { useZustand } from '../../store/useZustand'
+import { MAX_CHARACTER_CNT, REALTIME_DURATION, USE_PLAUSIBLE } from '../../utils/constants'
+import { getAggregate, getRealtimeVisitors } from '../../utils/plausible'
 
 
 export const Dashboard = () => {
@@ -20,8 +20,8 @@ export const Dashboard = () => {
     isSeeingApp,
   } = useZustand()
 
-  const {showDashboard} = useControls({
-    showDashboard: {value: true, label: 'Show Dashboard'},
+  const { showDashboard } = useControls({
+    showDashboard: { value: true, label: 'Show Dashboard' },
   })
 
   const loadDashboardData = useCallback(async () => {
@@ -77,7 +77,7 @@ export const Dashboard = () => {
 
   return (
     <div className={classNames({
-      'absolute z-10 p-2 bg-black border-2 border-white rounded top-3 left-2 text-white': true,
+      'absolute z-10 p-2  text-gray-900 bg-white dark:bg-gray-900 dark:text-white border-2 border-white rounded top-3 left-2 ': true,
       'hidden': !showDashboard || !realtimeVisitors,
     })}
     >
