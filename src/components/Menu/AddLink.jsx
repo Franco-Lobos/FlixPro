@@ -1,17 +1,19 @@
-import React from 'react'
-import AddSvg from '../../assets/icons/add.svg'
-import {useZustand} from '../../store/useZustand'
-
+import { isDarkModeAtom } from "../../recoil/theme"
+import AddIcon from "../Icons/AddIcon"
+import { useRecoilValue } from "recoil"
+import { useZustand } from "../../store/useZustand"
+import colors from 'tailwindcss/colors'
 
 export const AddLink = () => {
-  const {nextPlausibleStep} = useZustand()
+  const { nextPlausibleStep } = useZustand()
+
+  const isDarkMode = useRecoilValue(isDarkModeAtom)
 
   return (
-    <img
-      className='h-full bg-white cursor-pointer'
-      src={AddSvg}
-      alt='Add'
+    <AddIcon
+      className='h-full cursor-pointer'
       onClick={nextPlausibleStep}
+      fill={isDarkMode ? colors.white : colors.gray[900]}
     />
   )
 }

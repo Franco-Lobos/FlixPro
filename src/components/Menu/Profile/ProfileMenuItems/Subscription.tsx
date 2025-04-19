@@ -30,7 +30,7 @@ const Subscription = ({
 
     return (
         userSubscription ?
-            <div className={specialClassName}>
+            <div className={`${specialClassName}`}>
                 {t(LanguageLabels[userSubscription])}
             </div>
             : <></>

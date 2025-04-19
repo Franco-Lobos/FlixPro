@@ -1,42 +1,80 @@
 import { useTranslation } from "react-i18next";
 import LanguageLabels from "src/languages/en/translationEn.json";
-import { SectionProps } from "../../../../utils/types";
-import { MenuItem } from "@mui/material";
+import { Switch } from "@mui/material";
 import AsMenuItem from "../../../Generic/AsMenuItem";
-import MySettings from "../../../Icons/MySettings";
-import Downlaod from "../../../Icons/Download";
-import Moon from "../../../Icons/Moon";
-
+import SettingsIcon from "../../../Icons/MySettings";
+import DownlaodIcon from "../../../Icons/DownlaodIcon";
+import MoonIcon from "../../../Icons/Moon";
+import { useRecoilState } from "recoil";
+import { isDarkModeAtom } from "../../../../recoil/theme";
 
 const ConfigItems = () => {
 
     const { t } = useTranslation();
+    const [isDarkMode, setIsDarkMode] = useRecoilState<boolean>(isDarkModeAtom);
+
+    const handleDarkModeChange = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setIsDarkMode((prev: boolean) => !prev);
+    };
 
     return (
         <div>
             <AsMenuItem
                 title={t(LanguageLabels.SETTINGS)}
-                IconComponent={MySettings}
+                IconComponent={SettingsIcon}
+                darkMode={isDarkMode}
             />
             <AsMenuItem
                 title={t(LanguageLabels.DOWNLOAD_APP)}
-                IconComponent={Downlaod}
+                IconComponent={DownlaodIcon}
+                darkMode={isDarkMode}
             />
             <AsMenuItem
                 title={
                     <div>
                         <span>{t(LanguageLabels.DARK_MODE)}</span>
-                        <span>{t(LanguageLabels.BETA)}</span>
+                        <span className="
+                            rounded-md
+                            bg-gradient-to-r
+                            from-blue-200
+                            to-teal-100
+                            px-1
+                            py-0.5
+                            uppercase
+                            mx-2
+                        ">
+
+                            <span className="
+                                bg-gradient-to-r
+                                from-teal-600
+                                to-teal-500
+                                bg-clip-text
+                                text-transparent
+                                text-sm
+                                font-extrabold
+                            ">
+                                {t(LanguageLabels.BETA)}
+                            </span>
+                        </span>
 
                     </div>
                 }
-                IconComponent={Moon}
+                IconComponent={MoonIcon}
+                onClick={handleDarkModeChange}
                 AuxiliarComponent={
-                    () =>
-                        <>
-                            <span>{t(LanguageLabels.ENABLE)}</span>
-                        </>
+                    <Switch
+                        checked={isDarkMode}
+                        onChange={e => {
+                            e.stopPropagation();
+                            setIsDarkMode(e.target.checked);
+                        }
+                        }
+                    />
+
                 }
+                darkMode={isDarkMode}
             />
         </div>
     )

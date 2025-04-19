@@ -17,17 +17,13 @@ const Help = ({ onClick }: HelpProps) => {
         <button
             className={` 
                 flex items-center gap-2 p-2 text-sm
-                 text-black hover:bg-gray-800
-                dark:text-gray-200 dark:hover:bg-gray-700
+                 text-gray-900
+                  hover:bg-gray-700 hover:text-white
+                dark:text-white dark:bg-gray-900
                 rounded-sm
                 `}
 
             onClick={onClick}
-            onTouchStart={(e: React.TouchEvent<HTMLButtonElement>) => {
-                e.stopPropagation();
-                e.preventDefault();
-                onClick?.(e);
-            }}
         >
             {t(LanguageLabels.HELP)}
         </button>

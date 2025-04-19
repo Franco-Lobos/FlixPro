@@ -1,7 +1,7 @@
 
 
 
-const MySettings = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
+const SettingsIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
 
 
     return (
@@ -18,4 +18,4 @@ const MySettings = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
     );
 }
 
-export default MySettings;
+export default SettingsIcon;

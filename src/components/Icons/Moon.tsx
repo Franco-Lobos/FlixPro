@@ -1,7 +1,7 @@
 
 
 
-const Moon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
+const MoonIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
 
 
     return (
@@ -17,4 +17,4 @@ const Moon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
     );
 }
 
-export default Moon;
+export default MoonIcon;

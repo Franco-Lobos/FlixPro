@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import {useZustand} from '../../store/useZustand'
+import { useZustand } from '../../store/useZustand'
 
 
 export const Alert = () => {
@@ -14,7 +14,7 @@ export const Alert = () => {
       'hidden': !alertMsg,
     })}
     >
-      <div className='flex flex-col items-center justify-center w-2/5 gap-4 p-4 text-white bg-black border border-white rounded h-2/5'>
+      <div className='flex flex-col items-center justify-center w-2/5 gap-4 p-4 text-gray-900 bg-white dark:bg-gray-900 dark:text-white border-white rounded h-2/5'>
         {alertMsg}
         <button
           className='pl-2 pr-2 border-2 rounded'

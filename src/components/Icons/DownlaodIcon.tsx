@@ -1,7 +1,7 @@
 
 
 
-const Downlaod = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
+const DownlaodIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
 
 
     return (
@@ -20,4 +20,4 @@ const Downlaod = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
     );
 }
 
-export default Downlaod;
+export default DownlaodIcon;

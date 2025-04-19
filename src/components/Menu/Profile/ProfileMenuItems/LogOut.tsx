@@ -4,6 +4,10 @@ import LanguageLabels from "src/languages/en/translationEn.json";
 import { SectionProps } from "../../../../utils/types";
 import { t } from "i18next";
 import { MenuItem } from "@mui/material";
+import AsMenuItem from "../../../Generic/AsMenuItem";
+import LogOutIcon from "../../../Icons/LogOutIcon";
+import { isDarkModeAtom } from "../../../../recoil/theme";
+import { useRecoilValue } from "recoil";
 
 const LogOut = ({
     specialClassName
@@ -12,6 +16,9 @@ const LogOut = ({
 
     const { t } = useTranslation();
 
+    const isDarkMode = useRecoilValue<boolean>(isDarkModeAtom);
+
+
     const handleLogout = () => {
         logout({ logoutParams: { returnTo: window.location.origin } });
     };
@@ -19,11 +26,12 @@ const LogOut = ({
     return (
 
         <div className={`${specialClassName} cursor-pointer`} onClick={handleLogout}>
-            <MenuItem>
-                {
-                    t(LanguageLabels.LOG_OUT)
-                }
-            </MenuItem>
+            <AsMenuItem
+                title={t(LanguageLabels.LOG_OUT)}
+                IconComponent={LogOutIcon}
+                darkMode={isDarkMode}
+                onClick={handleLogout}
+            />
         </div>
     )
 };
