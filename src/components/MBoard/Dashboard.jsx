@@ -77,7 +77,7 @@ export const Dashboard = () => {
 
   return (
     <div className={classNames({
-      'absolute z-10 p-2  text-gray-900 bg-white dark:bg-gray-900 dark:text-white border-2 border-white rounded top-3 left-2 ': true,
+      'absolute z-10 p-2  text-gray-900 bg-white dark:bg-gray-900 dark:text-white border-2 dark:border-white border-gray-900  rounded top-3 left-2 ': true,
       'hidden': !showDashboard || !realtimeVisitors,
     })}
     >

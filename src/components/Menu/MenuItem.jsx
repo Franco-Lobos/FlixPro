@@ -1,13 +1,14 @@
-import classNames from 'classnames'
-import React from 'react'
 import CloseSvg from '../../assets/icons/close.svg'
-import {useZustand} from '../../store/useZustand'
-import {USE_PLAUSIBLE} from '../../utils/constants'
-import {removeData} from '../../utils/mongo.db'
-import {deleteSite} from '../../utils/plausible'
+import { useZustand } from '../../store/useZustand'
+import { USE_PLAUSIBLE } from '../../utils/constants'
+import { removeData } from '../../utils/mongo.db'
+import { deleteSite } from '../../utils/plausible'
+import clsx from 'clsx'
+import { isDarkModeAtom } from '../../recoil/theme'
+import { useRecoilValue } from 'recoil'
 
 
-export const MenuItem = ({index, menu}) => {
+export const MenuItem = ({ index, menu }) => {
   const {
     selMenuIndex,
     setSelMenuIndex,
@@ -17,12 +18,18 @@ export const MenuItem = ({index, menu}) => {
     onConfirm,
   } = useZustand()
 
+
+  const isDarkMode = useRecoilValue(isDarkModeAtom)
+
+
   return (
-    <div className={classNames({
-      'flex items-center justify-center gap-2 p-2 text-white border-2 border-b-0 rounded-tl rounded-tr cursor-pointer': true,
-      'border-white': index === selMenuIndex,
-      'border-gray-500': index !== selMenuIndex,
-    })}
+    <div className={clsx(
+      'flex items-center justify-center gap-2 p-2 text-gray-900 dark:text-white border-2 border-b-0 rounded-tl rounded-tr cursor-pointer',
+      `${index === selMenuIndex
+        ? isDarkMode ? 'border-white' : 'border-gray-900'
+        : 'border-gray-500'
+      }`,
+    )}
     >
       <div onClick={() => setSelMenuIndex(index)}>{menu.domain}</div>
       <img
@@ -54,6 +61,6 @@ export const MenuItem = ({index, menu}) => {
           }
         })}
       />
-    </div>
+    </div >
   )
 }

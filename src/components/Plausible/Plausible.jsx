@@ -15,7 +15,7 @@ export const Plausible = () => {
       'hidden': plausibleStep === 0,
     })}
     >
-      <div className='relative flex flex-col items-center justify-center w-3/5 gap-4  text-white  bg-gray-700 dark:text-white border-white rounded h-3/5'>
+      <div className='relative flex flex-col items-center justify-center w-3/5 gap-4  text-gray-900  bg-gray-700 dark:text-white border-white rounded h-3/5'>
         <Close />
         {plausibleStep === 1 && <Create />}
         {plausibleStep === 2 && <Snippet />}
