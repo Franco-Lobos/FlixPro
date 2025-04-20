@@ -30,7 +30,7 @@ export const Create = ({ domain }) => {
         value={domain}
       />
       <button
-        className='pl-2 pr-2 border-2 rounded'
+        className='pl-2 pr-2 border-2 rounded text-white'
         onClick={() => onConfirm(async () => {
           setIsLoading(true)
 

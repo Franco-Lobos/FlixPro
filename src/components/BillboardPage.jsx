@@ -20,7 +20,7 @@ export const BillboardPage = () => {
   return (
     <div
       className={classNames({
-        'absolute z-10 w-full h-full  text-gray-900 bg-white dark:bg-gray-900 dark:text-white rounded': true,
+        'absolute z-10 w-full h-full text-gray-900 bg-white dark:bg-gray-900 dark:text-white rounded': true,
         'hidden': !fullScreen,
       })}
     >
